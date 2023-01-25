@@ -18,7 +18,7 @@ from pilz_robot_program.pilz_robot_program import Lin, Ptp, Sequence
 home = (0.0, -pi/2.0, pi/2.0, -pi, -pi/2, 0)
 
 pose_list = poses_list_from_yaml(
-    '/dev_ws/src/ur10e_examples/toolpaths/scan.yaml')
+    '/dev_ws/src/ur10e_examples/toolpaths/test.yaml')
 toolpath = [list_to_pose(pose) for pose in pose_list]
 
 # define end effector
@@ -47,7 +47,7 @@ start_srv_req.rgbd_params.depth_trunc = 0.15
 start_srv_req.rgbd_params.convert_rgb_to_intensity = False
 
 stop_srv_req = StopReconstructionRequest()
-stop_srv_req.mesh_filepath = '/home/v/test.ply'
+stop_srv_req.mesh_filepath = '/home/hritik/lucypaco.ply'
 
 # define speed and acceleration
 
@@ -59,8 +59,8 @@ move_acc = 0.5
 # scan_acc = 0.0002
 
 # fast scan
-scan_vel = 0.05
-scan_acc = 0.01
+scan_vel = 0.1
+scan_acc = 0.05
 
 # boolean to enable/disable reconstruction
 # for testing purposes
